@@ -114,7 +114,7 @@
 
 .hero-info {
   width: 46vw;
-  min-height: 68vh;
+  height: 68vh;
   background-color: rgb(24, 28, 30, 0.7);
   border-radius: 4px;
   padding: 16px;
@@ -331,6 +331,14 @@ select {
   color: var(--primary);
 }
 
+.desktop-info {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+}
+
 .req-el {
   max-width: 300px;
   display: flex;
@@ -504,4 +512,113 @@ path {
 
 .footer {
   padding: 32px 0;
+}
+
+
+@media screen and (max-width: 1048px) {
+
+  .hero-container {
+    display: block;
+  }
+
+  .hero-info {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .application-form {
+    width: 100%;
+    min-height: 50vh;
+    margin-bottom: 2rem;
+  }
+
+  .flow-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .adv-row,
+  .type-row,
+  .req-container,
+  .reasons-row,
+  .company-options,
+  .price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .price-description {
+    text-align: center;
+  }
+
+  .map-image svg {
+    width: 120vw;
+    padding-left: 40px;
+  }
+
+  .places {
+    font-size: 12px;
+    gap: 1rem;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .desktop-info {
+    display: none;
+    z-index: -1;
+    height: 0;
+    width: 0;
+  }
+
+  .App {
+    overflow-y: hidden;
+  }
+
+  #logo {
+    width: 180px;
+  }
+
+  #logo div {
+    width: 180px;
+    display: flex;
+  }
+
+  .nav-contact {
+    height: 120px;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 0;
+  }
+
+  .footer {}
+
+  .footer-info button,
+  .footer-info svg {
+    display: none;
+  }
+
 }

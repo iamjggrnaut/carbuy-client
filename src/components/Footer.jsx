@@ -14,7 +14,7 @@ const Footer = () => {
                         <IoCarSportSharp style={{ marginRight: '8px', fill: 'darkred' }} />
                     </div>
                 </div>
-                <div className='d-flex'>
+                <div className='d-flex footer-info'>
                     <div className='d-flex flex-column align-items-end me-4 pt-2'>
                         <a style={{ textDecoration: 'none', color: 'white' }} href='tel:+79137406622'>+7-913-740-6622</a>
                         <span>Новосибирск, ул. Октябрьская, 42</span>

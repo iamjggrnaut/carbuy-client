@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { IoCarSportSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 
 
 const Navbar = () => {
@@ -16,7 +18,7 @@ const Navbar = () => {
                         <IoCarSportSharp style={{ marginRight: '8px', fill: 'darkred' }} />
                     </div>
                 </div>
-                <div className='d-flex'>
+                <div className='d-flex desktop-info'>
                     <div className='d-flex flex-column align-items-end me-4 pt-2'>
                         <a style={{ textDecoration: 'none', color: 'white' }} href='tel:+79137406622'>+7-913-740-6622</a>
                         <span>Новосибирск, ул. Октябрьская, 42</span>
@@ -33,6 +35,9 @@ const Navbar = () => {
                         </div>
                         <button className='prime-btn mb-1'>Заказать звонок</button>
                     </div>
+                </div>
+                <div className='mobile-menu'>
+                    <span style={{ fontSize: '32px', cursor: 'pointer' }}><GiHamburgerMenu /></span>
                 </div>
             </div>
             <div className="submenu">
