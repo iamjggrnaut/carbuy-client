@@ -84,7 +84,9 @@ const ApplicationForm = () => {
                     <input type="number" className='form-control' onChange={e => setNumber(e.target.value)} />
                 </div>
                 <div className="mt-3 col">
-                    <button className="prime-btn" style={{ width: '100%', height: '40px' }}>
+                    <button className="prime-btn" style={{ width: '100%', height: '40px' }}
+                        onClick={e => handlePostInfo(e)}
+                    >
                         Отправить
                     </button>
                 </div>
