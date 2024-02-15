@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 
 
-const Navbar = () => {
+const Navbar = ({ open, close }) => {
 
     return (
         <div className='navpanel'>
@@ -27,18 +27,38 @@ const Navbar = () => {
                     <div className='nav-contact'>
                         <div className="d-flex">
                             <span className='me-2'>
-                                <a href="https://wa.me/79137406622"><FaWhatsapp /></a>
+                                <a href="https://wa.me/79137406622">
+                                    <FaWhatsapp
+                                        style={{
+                                            backgroundColor: 'green',
+                                            borderRadius: '100%',
+                                            padding: '2px',
+                                            fontSize: '32px'
+                                        }}
+                                    />
+                                </a>
                             </span>
                             <span>
-                                <a href="https://t.me/+79137406622"><FaTelegram /></a>
+                                <a href="https://t.me/+79137406622">
+                                    <FaTelegram
+                                        style={{
+                                            fill: 'rgb(56, 170, 182)',
+                                            borderRadius: '100%',
+                                            padding: '2px',
+                                            border: '1px solid, white',
+                                            fontSize: '32px',
+                                            backgroundColor: 'white'
+                                        }}
+                                    />
+                                </a>
                             </span>
                         </div>
-                        <button className='prime-btn mb-1'>Заказать звонок</button>
+                        <button className='prime-btn mb-1' onClick={open}>Заказать звонок</button>
                     </div>
                 </div>
-                <div className='mobile-menu'>
+                {/* <div className='mobile-menu'>
                     <span style={{ fontSize: '32px', cursor: 'pointer' }}><GiHamburgerMenu /></span>
-                </div>
+                </div> */}
             </div>
             <div className="submenu">
                 <span onClick={() => { document.getElementById('hero').scrollIntoView(); }} className='submenu-item'>Экспресс оценка</span>

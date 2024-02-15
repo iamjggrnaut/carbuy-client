@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ServiceFunctions } from '../service'
 
 const ApplicationForm = () => {
 
@@ -23,6 +24,26 @@ const ApplicationForm = () => {
         setRespType(response[0].value)
     }, [])
 
+    const [number, setNumber] = useState()
+    const [model, setModel] = useState()
+    const [year, setYear] = useState()
+
+    const handlePostInfo = e => {
+        if (!number) {
+            e.preventDefault()
+        } else {
+            ServiceFunctions.postInfo({
+                state: state,
+                contact: respType,
+                phone: number,
+                model: model,
+                year: year
+            })
+        }
+    }
+
+
+
 
     return (
         <div className='application-form'>
@@ -31,16 +52,16 @@ const ApplicationForm = () => {
                 <div className="d-flex mb-2">
                     <div className='me-2 col'>
                         <label htmlFor="" className='mb-2'>Марка</label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control" onChange={e => setModel(e.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="" className='mb-2'>Год</label>
-                        <input type="text" className="form-control" />
+                        <input type="number" className="form-control" onChange={e => setYear(e.target.value)} />
                     </div>
                 </div>
                 <div>
                     <label htmlFor="" className='mb-2'>Состояние</label>
-                    <select name="" id="" className='form-control'>
+                    <select name="" id="" className='form-control' onChange={e => setState(e.target.value)}>
                         {
                             options?.map((el, i) => (
                                 <option key={i} value={el.value}>{el.value}</option>
@@ -50,9 +71,9 @@ const ApplicationForm = () => {
                 </div>
                 <div className='mt-2'>
                     <label htmlFor="" className='mb-2'>Как сообщить Вам сумму выкупа?</label>
-                    <select name="" id="" className='form-control'>
+                    <select name="" id="" className='form-control' onChange={e => setRespType(e.target.value)}>
                         {
-                            options?.map((el, i) => (
+                            response?.map((el, i) => (
                                 <option key={i} value={el.value}>{el.value}</option>
                             ))
                         }
@@ -60,7 +81,7 @@ const ApplicationForm = () => {
                 </div>
                 <div className='mt-2'>
                     <label htmlFor="" className='mb-2'>Номер для связи*</label>
-                    <input type="text" className='form-control' />
+                    <input type="number" className='form-control' onChange={e => setNumber(e.target.value)} />
                 </div>
                 <div className="mt-3 col">
                     <button className="prime-btn" style={{ width: '100%', height: '40px' }}>

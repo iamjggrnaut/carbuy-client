@@ -6,7 +6,7 @@ import { FaTelegram, FaWhatsapp } from 'react-icons/fa';
 
 const position = [55.018803, 82.933952]
 
-const Contact = () => {
+const Contact = ({ open }) => {
 
     L.Icon.Default.mergeOptions({
         iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -30,14 +30,34 @@ const Contact = () => {
                     <p style={{ borderTop: '1px solid silver', borderBottom: '1px solid silver', padding: '16px 0', maxWidth: '360px' }}><span className="fw-bold">Телефон:</span> +7-913-740-6622</p>
                     <div className="d-flex gap-4">
                         <span className='me-2'>
-                            <a href="https://wa.me/79137406622"><FaWhatsapp /></a>
+                            <a href="https://wa.me/79137406622">
+                                <FaWhatsapp
+                                    style={{
+                                        backgroundColor: 'green',
+                                        borderRadius: '100%',
+                                        padding: '2px',
+                                        fontSize: '32px'
+                                    }}
+                                />
+                            </a>
                         </span>
                         <span>
-                            <a href="https://t.me/+79137406622"><FaTelegram /></a>
+                            <a href="https://t.me/+79137406622">
+                                <FaTelegram
+                                    style={{
+                                        fill: 'rgb(56, 170, 182)',
+                                        borderRadius: '100%',
+                                        padding: '2px',
+                                        border: '1px solid, white',
+                                        fontSize: '32px',
+                                        backgroundColor: 'white'
+                                    }}
+                                />
+                            </a>
                         </span>
                     </div>
                     <div>
-                        <button style={{ width: '350px' }} className="prime-btn mt-4">Заказать звонок</button>
+                        <button style={{ width: '350px' }} className="prime-btn mt-4" onClick={open}>Заказать звонок</button>
                     </div>
                 </div>
                 <div className="contact-map">

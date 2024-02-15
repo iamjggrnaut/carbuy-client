@@ -106,7 +106,7 @@
 }
 
 .hero-container {
-  z-index: 999999;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -130,6 +130,24 @@
   border-radius: 4px;
   box-shadow: 0 0 4px var(--primary);
   padding: 16px;
+}
+
+.modal-dialog * {
+  z-index: 9999999;
+  background-color: rgb(8, 13, 18, 0.7);
+  color: white;
+}
+
+.modal-dialog {
+  box-shadow: 0 0 40px var(--primary);
+}
+
+.modal-dialog input {
+  background-color: rgb(226, 157, 87, 0.3);
+}
+
+.modal-dialog button {
+  background-color: var(--primary);
 }
 
 input,
@@ -577,10 +595,23 @@ path {
   }
 
   .desktop-info {
-    display: none;
+    /* display: none;
     z-index: -1;
     height: 0;
-    width: 0;
+    width: 0; */
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-contact {
+    max-height: 70px;
+    padding-right: 24px;
+    margin-top: 4px;
+  }
+
+  .desktop-info button {
+    display: none;
   }
 
   .App {
@@ -600,12 +631,12 @@ path {
     height: 120px;
   }
 
-  .mobile-menu {
+  /* .mobile-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
   .footer-info {
     display: flex;
@@ -614,11 +645,15 @@ path {
     margin-right: 0;
   }
 
-  .footer {}
-
   .footer-info button,
   .footer-info svg {
     display: none;
+  }
+
+  .submenu {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
   }
 
 }
