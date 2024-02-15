@@ -1,4 +1,4 @@
-const url = 'https://car-buyout.ru/api'
+const url = 'https://5.35.91.182:5000/api'
 
 export const ServiceFunctions = {
 
